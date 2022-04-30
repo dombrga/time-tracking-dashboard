@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,300&display=swap');
+
+:root {
+  --main-font: 'Rubik', sans-serif;
+  --primary-bg: hsl(226, 43%, 10%);
+  --secondary-bg: hsl(235, 46%, 20%);
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+img,
+.category > span,
+.duration > span,
+.activity__icon,
+.frequency-container > span,
+.user-info > span {
+  display: block;
+}
+
+.curved-border {
+  border-radius: .9em;
+}
+
+.avatar-container { 
+  /* display: inline-block;  */
+  /* display: block;  */
+  width: 33%;
+  min-width: 80px;
+  max-width: 150px;
+}
+
+.primary-bg {
+  background-color: var(--primary-bg);
+}
+
+.secondary-bg {
+  background-color: var(--secondary-bg);
+}
+
+/* typography */
+.tracker__owner {
+  font-size: 1.2em;
+}
+
+.report-for { color: hsl(236, 100%, 87%); }
+
+.frequency-container > span {
+  color: hsl(235, 45%, 61%);
+}
+
+.activity,
+.hrs,
+.tracker__owner,
+.frequency-container > span:hover {
+  color: white;
+}
+
+.activity { font-size: 18px; }
+.hrs { font-size: 2em; }
+.last { color: hsl(236, 100%, 87%); }
+
+.frequency-container > span:hover {
+  cursor: pointer;
+}
+
+
+/* general */
+main {
+  font-family: var(--main-font);
+  /* color: wheat; */
+  padding: 2em;
+}
+
+.grid-container {
+  /* ask if padding is better to put here than in main tag */
+  /* padding: 2em 2em 6em; */
+  display: grid;
+  /* grid-template-columns: 100%; */
+  /* padding: 2em 2em 2em; */
+  /* gap: 5em 0; */
+}
+
+.user-container {
+  margin-bottom: 6.3em;
+  position: relative;
+}
+
+.user-bar {
+  padding: 1.5em 2em;
+  position: relative;
+  z-index: 5;
+
+  background-color: hsl(246, 80%, 60%);
+  display: flex;
+  gap: 0 1.5em;
+}
+
+.frequency-container {
+  padding: 2.8em 2em 2em;
+  position: absolute;
+  bottom: -5em;
+  z-index: 1;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar {
+  border: .2em white solid;
+  border-radius: 100%;
+
+  width: 100%;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .5em 0;
+}
+
+/* ----------activity-------- */
+.main-activity-container {
+  display: grid;
+  /* grid-template-rows: 1fr; */
+}
+
+.activity-container {
+  position: relative;
+  margin-bottom: 7.5em;
+}
+
+.activity-bar { 
+  padding: 0 2em;
+  height: 5em;
+  position: relative;
+  overflow: hidden;
+}
+
+.activity__icon {
+  position: absolute;
+  right: 2em;
+  top: -.9em;
+}
+
+.activity-content {
+  padding: 2em;
+  position: absolute;
+  width: 100%;
+  top: 2.3em;
+}
+
+
+.category,
+.duration {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category { margin-bottom: 1em; }
+
+.work { background-color: hsl(15, 100%, 70%); }
+.play { background-color: hsl(195, 74%, 62%); }
+.study { background-color: hsl(348, 100%, 68%); }
+.exercise { background-color: hsl(145, 58%, 55%); }
+.social { background-color: hsl(264, 64%, 52%); }
+.self-care { background-color: hsl(43, 84%, 65%); }
+
+@media screen and (min-width:1000px) {
+  main { 
+    padding: 10em 6em;
+  }
+  .grid-container {
+    grid-template-columns: 1fr 3fr;
+    gap: 0 1.5em;
+  }
+
+  .main-activity-container {
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: ; */
+    gap: 1.5em 1.5em;
+  }
+}
+
+
+
+
+@media screen and (max-width:300px) {
+  .frequency-container,
+  .user-bar { 
+    /* display: block; */
+  }
+  
+}
+
+
+
+/* 
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Blue: hsl(246, 80%, 60%)
+
+- Light red (work): hsl(15, 100%, 70%)
+- Soft blue (play): hsl(195, 74%, 62%)
+- Light red (study): hsl(348, 100%, 68%)
+- Lime green (exercise): hsl(145, 58%, 55%)
+- Violet (social): hsl(264, 64%, 52%)
+- Soft orange (self care): hsl(43, 84%, 65%)
+
+### Neutral
+
+- Very dark blue: hsl(226, 43%, 10%)
+- Dark blue: hsl(235, 46%, 20%)
+- Desaturated blue: hsl(235, 45%, 61%)
+- Pale Blue: hsl(236, 100%, 87%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 18px (card titles e.g. Work, Play)
+
+### Font
+
+- Family: [Rubik](https://fonts.google.com/specimen/Rubik)
+- Weights: 300, 400, 500
+
+Report for
+  Jeremy Robson
+
+  Daily
+  Weekly
+  Monthly
+
+  Work
+  5hrs <!-- daily -->
+  Previous - 7hrs <!-- daily -->
+  32hrs <!-- weekly -->
+  Previous - 36hrs <!-- weekly -->
+  103hrs <!-- monthly -->
+  Previous - 128hrs <!-- monthly -->
+
+  Play
+  1hr <!-- daily -->
+  Previous - 2hrs <!-- daily -->
+  10hrs <!-- weekly -->
+  Previous - 8hrs <!-- weekly -->
+  23hrs <!-- monthly -->
+  Previous - 29hrs <!-- monthly -->
+
+  Study
+  0hrs <!-- daily -->
+  Previous - 1hr <!-- daily -->
+  4hrs <!-- weekly -->
+  Previous - 7hrs <!-- weekly -->
+  13hrs <!-- monthly -->
+  Previous - 19hrs <!-- monthly -->
+
+  Exercise
+  1hr <!-- daily -->
+  Previous - 1hr <!-- daily -->
+  4hrs <!-- weekly -->
+  Previous - 5hrs <!-- weekly -->
+  11hrs <!-- monthly -->
+  Previous - 18hrs <!-- monthly -->
+
+  Social
+  1hr <!-- daily -->
+  Previous - 3hrs <!-- daily -->
+  5hrs <!-- weekly -->
+  Previous - 10hrs <!-- weekly -->
+  21hrs <!-- monthly -->
+  Previous - 23hrs <!-- monthly -->
+
+  Self Care
+  0hrs <!-- daily -->
+  Previous - 1hr <!-- daily -->
+  2hrs <!-- weekly -->
+  Previous - 2hrs <!-- weekly -->
+  7hrs <!-- monthly -->
+  Previous - 11hrs <!-- monthly -->
+  
+ */
